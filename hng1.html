@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HNG Frontend Task 1</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        MY GOALS IN THE TECH FIELD FOR THE NEXT TWO YEARS
+      </h1>
+    </header>
+
+    <nav>
+      <div data-testid="currentTimeUTC">
+        <P class="time">Current Time (UTC): <span id="currentTime"></span> </P>
+      </div>
+      <div data-testid="currentDay">
+        <P class="time">Current Date: <span id="currentDay"></span> </P>
+      </div>
+            </nav>
+
+          <section class="profile" id="profile">
+            <div class="profile-content">
+              <div class="text">
+                <div class="text-one">My Profile</div>
+                <div class="text-two"  data-testid="slackDisplayName">Slack Name: DEVLummy</div>
+                <div class="text-three">Frontend Designer</div>
+                <div class="text-four" data-testid="slackEmail">Email: gbodoolumide@gmail.com</div>
+              </div>
+            </div>
+              <div data-testid="slackProfilePicture"> 
+                <img src="https://i.imgur.com/7sesPXw.png" width="originalWidth" height="originalHeight" alt="profile-picture">
+              </div>
+          </section>
+
+          <section class="goals-container">
+            <div class="my-goals">
+              <ul>
+                <h2>GOALS</h2>
+                <li> Learn a New Programming Language</li>
+                <li> Expand Knowledge in a Specific Domain</li>
+                <li> Build a Strong Professional Network</li>
+                <li> Complete Certifications</li>
+                <li> Work on Real-World Projects</li>
+              </ul>
+            </div>
+          </section>
+          <footer>
+            <div class="link-container">
+              <h3> For more information kindly visit the link below</h3>
+              <div class="link">
+              <a  data-testid="hngLink" href=" hng.tech/learn">HNG Learn</a>
+              <a   data-testid="keywordLink" href="  keyword.dog">Keyword</a>
+              <a  data-testid="scrapeanywebLink" href=" scrapeanyweb.site">Scrape Any Web</a>
+              </div>
+            </div>
+
+          </footer>
+
+          <script>
+              function updateTime(){
+                const now = new Date();
+                const hours = now.getUTCHours();
+                const minutes = now.getUTCMinutes();
+                const seconds = now.getUTCSeconds();
+
+                const paddedMinutes = minutes.toString().padStart(2, '0')
+                const paddedSeconds = seconds.toString().padStart(2, '0')
+                const currentTime = `${hours}: ${ paddedMinutes}: ${paddedSeconds}`;
+
+                document.getElementById('currentTime').innerText =  currentTime;
+              }
+
+              function updateDay(){
+                const now = new Date();
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+                const dayOfWeek = days[now.getUTCDay()];
+                document.getElementById('currentDay').innerText = dayOfWeek;
+              }
+
+              updateTime();
+              updateDay();
+
+          </script>
+  </body>
+</html>
