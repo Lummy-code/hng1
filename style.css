@@ -6,9 +6,8 @@
   text-decoration: none;
   scroll-behavior: smooth;
 }
-img{
-  background: #4070f4;
-}
+
+
 body {
   max-width: 1000px;
   width: 100%;
@@ -108,13 +107,35 @@ body {
     justify-content: center;
   }
 
-  @media (max-width: 700px) {
-    .facebook-page {
-        flex-direction: column;
-        text-align: center;
+  @media (max-width: 750px) {
+    header {
+      width: 100%;
     }
     
-    .facebook-page .text{
-        margin-bottom: 30px;
+
+      .profile {
+        width: 100vw;
+      }
+
+        .goals-container {
+          width: 100vw;
     }
-}
+
+  }
+
+  @media (max-width: 450px) {
+    header {
+      width: 100vw;
+    }
+    
+    
+
+      .profile {
+        width: 100vw;
+      }
+
+        .goals-container {
+          width: 100vw;
+    }
+
+  }
